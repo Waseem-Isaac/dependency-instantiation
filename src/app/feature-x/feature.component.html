@@ -1,8 +1,5 @@
-
-<div class="content" role="main">
-
-  <div class="container">
-    <h1>/app.module / app.component</h1>
+<div class="container">
+  <h1>/feature.module / feature.component</h1>
 
     <div class="summary">
       <div class="value">
@@ -11,18 +8,12 @@
       </div>
       <div class="value">
         <div class="number"><div class="title">Stateless service</div> <span [@valueChanged]="stateless.counter" class="badge">{{stateless.counter}}  </span></div>  
-        <div class="hint" [@valueChanged]="stateless.counter"> App Level - requesting the global root instance - providedIn: 'root' </div>
+        <div class="hint" [@valueChanged]="stateless.counter"> App Level - requesting the global root instance </div>
       </div>
     </div>
     
     <div class="controls">
-          <button (click)="setStatefulVal()">Set Stateful Service Value</button>
-          <button (click)="setStatelessVal()">Set Stateless Service Value</button>
-    </div>
+      <button (click)="setStatefulVal()">Set Stateful Service Value</button>
+      <button (click)="setStatelessVal()">Set Stateless Service Value</button>
   </div>
-  
-  <app-feature></app-feature>
-
 </div>
-
-

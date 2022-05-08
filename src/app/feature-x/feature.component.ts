@@ -1,12 +1,12 @@
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
-import { Component } from '@angular/core';
-import { StatefulService } from './services/stateful.service';
-import { StatelessService } from './services/stateless.service';
+import { Component, OnInit } from '@angular/core';
+import { StatefulService } from '../services/stateful.service';
+import { StatelessService } from '../services/stateless.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'app-feature',
+  templateUrl: './feature.component.html',
+  styleUrls: ['./feature.component.scss'],
   providers: [
     StatefulService
   ],
@@ -18,17 +18,18 @@ import { StatelessService } from './services/stateless.service';
           transition('* => void', []),   // when the item is removed
           transition('* => *', [         // when the item is changed
               animate(200, keyframes([  // animate for 1200 ms
-                  style ({ background : '#f0f0f0',color: '#fff', offset: 0.0 }),
-                  style ({ background : 'inherit',color:'inherit', offset: 1.0 }),
+                style ({ background : '#f0f0f0',color: '#fff', offset: 0.0 }),
+                style ({ background : 'inherit',color:'inherit', offset: 1.0 }),
               ])),
           ]),
       ]),
   ]
 })
-export class AppComponent {
-  title = 'DI';
-  constructor(public stateless: StatelessService, public stateful: StatefulService){
+export class FeatureComponent implements OnInit {
 
+  constructor(public stateless: StatelessService, public stateful: StatefulService) { }
+
+  ngOnInit(): void {
   }
 
   setStatefulVal(){
