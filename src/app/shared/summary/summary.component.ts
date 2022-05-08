@@ -1,7 +1,7 @@
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { StatefulService } from 'src/app/services/stateful.service';
-import { StatelessService } from 'src/app/services/stateless.service';
+import { StatefulService } from '../../../app/services/stateful.service';
+import { StatelessService } from '../../../app/services/stateless.service';
 
 @Component({
   selector: 'app-summary',
