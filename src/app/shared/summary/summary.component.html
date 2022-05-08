@@ -1,0 +1,15 @@
+<div class="summary">
+    <div class="value">
+      <div class="number"><div class="title">Stateful service</div> <span [@valueChanged]="stateful.counter" class="badge">{{stateful.counter}}</span></div> 
+      <div class="hint" [@valueChanged]="stateful.counter">  Module Level - requesting the current module instance  </div>
+    </div>
+    <div class="value">
+      <div class="number"><div class="title">Stateless service</div> <span [@valueChanged]="stateless.counter" class="badge">{{stateless.counter}}  </span></div>  
+      <div class="hint" [@valueChanged]="stateless.counter"> App Level - requesting the global root instance </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button (click)="setStatefulVal()">Set StatefulService value</button>
+    <button (click)="setStatelessVal() ">Set StatelessService Value</button>
+</div>

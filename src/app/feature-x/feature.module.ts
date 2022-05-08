@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { StatefulService } from '../services/stateful.service';
 import { FeatureComponent } from './feature.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { FeatureComponent } from './feature.component';
   ],
   exports: [FeatureComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule,
   ]
 })
 export class FeatureModule { }

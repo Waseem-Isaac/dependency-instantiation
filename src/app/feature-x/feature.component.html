@@ -1,19 +1,11 @@
 <div class="container">
   <h1>/feature.module / feature.component</h1>
 
-    <div class="summary">
-      <div class="value">
-        <div class="number"><div class="title">Stateful service</div> <span [@valueChanged]="stateful.counter" class="badge">{{stateful.counter}}</span></div> 
-        <div class="hint" [@valueChanged]="stateful.counter">  Module Level - requesting the current module instance  </div>
-      </div>
-      <div class="value">
-        <div class="number"><div class="title">Stateless service</div> <span [@valueChanged]="stateless.counter" class="badge">{{stateless.counter}}  </span></div>  
-        <div class="hint" [@valueChanged]="stateless.counter"> App Level - requesting the global root instance </div>
-      </div>
-    </div>
-    
-    <div class="controls">
-      <button (click)="setStatefulVal()">Set Stateful Service Value</button>
-      <button (click)="setStatelessVal()">Set Stateless Service Value</button>
-  </div>
+  <app-summary 
+    [stateless]="stateless" 
+    [stateful]="stateful" 
+    (onSetStatefulVal$)="setStatefulVal()" 
+    (onSetStatelessVal$)="setStatelessVal()">
+  </app-summary>
+
 </div>
